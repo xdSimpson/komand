@@ -40,3 +40,9 @@ void Bookstore::buyBook(const std::string& title) {
     throw std::runtime_error("The book was not found");
     system("pause");
 }
+void Bookstore::printPurchasedBooks() const {
+    for (const auto& book : purchasedBooks) {
+        std::cout << book.getTitle() << " - " << book.getAuthor() << " - " << book.getPrice() << std::endl;
+    }
+    system("pause");
+}
