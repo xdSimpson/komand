@@ -34,3 +34,29 @@ int main() {
                 bookstore.printBooks();
                 break;
             }
+            case 3: {
+                std::string title;
+                std::cout << "Enter the name of the book: ";
+                std::cin >> title;
+                bookstore.buyBook(title);
+                break;
+            }
+            case 4: {
+                bookstore.printPurchasedBooks();
+                break;                }
+            case 5: {
+                std::cout << "Exit..." << std::endl;
+                break;
+            }
+            default: {
+                std::cout << "Incorrect choice. Try again." << std::endl;
+            }
+            }
+        }
+        catch (const std::exception& e) {
+            std::cerr << "Error: " << e.what() << std::endl;
+        }
+    } while (choice != 5);
+
+    return 0;
+}
