@@ -15,3 +15,15 @@ private:
     std::string author;
     double price;
 };
+
+class Bookstore {
+public:
+    void addBook(const Book& book);
+    void printBooks() const;
+    void buyBook(const std::string& title);
+    void printPurchasedBooks() const;
+
+private:
+    std::vector<Book> books;
+    std::vector<Book> purchasedBooks;
+};
