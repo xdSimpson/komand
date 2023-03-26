@@ -20,3 +20,23 @@ double Book::getPrice() const {
 void Bookstore::addBook(const Book& book) {
     books.push_back(book);
 }
+
+void Bookstore::printBooks() const {
+    for (const auto& book : books) {
+        std::cout << book.getTitle() << " - " << book.getAuthor() << " - " << book.getPrice() << std::endl;
+    }
+    system("pause");
+}
+
+void Bookstore::buyBook(const std::string& title) {
+    for (auto it = books.begin(); it != books.end(); ++it) {
+        if (it->getTitle() == title) {
+            purchasedBooks.push_back(*it);
+            books.erase(it);
+            return;
+        }
+        system("pause");
+    }
+    throw std::runtime_error("The book was not found");
+    system("pause");
+}
